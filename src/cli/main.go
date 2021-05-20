@@ -11,13 +11,24 @@ import (
 )
 
 func main() {
-	fromXML, err := parsers.ParseAlphabet("parsers/xmlittre-data")
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
+	var parsedEntries []dictionary.Entry
+	var err error
 
-	d := dictionary.New(fromXML)
+	if _, err = os.Stat("bin/dict.gob"); os.IsNotExist(err) {
+		parsedEntries, err = parsers.ParseAlphabet("parsers/xmlittre-data")
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+	} else {
+		// assume file exists
+		parsedEntries, err = parsers.ParseGob()
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+	}
+	d := dictionary.New(parsedEntries)
 	w := d.NewRandomWord()
 
 	out(w, os.Stdout)
@@ -25,11 +36,8 @@ func main() {
 
 func out(w dictionary.Entry, at io.Writer) {
 	pTerm(at, w.Term)
-	pNL(at)
 	pDef(at, w.Body.Def)
-	pNL(at)
 	pDef(at, w.Body.Quotes)
-	pNL(at)
 	pTagLine(at, "Provided by Littré")
 }
 
