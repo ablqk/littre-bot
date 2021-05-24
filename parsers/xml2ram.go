@@ -28,7 +28,6 @@ func ParseAlphabet(folderPath string) ([]dictionary.Entry, error) {
 			}
 			mut.Lock()
 			dico = append(dico, e...)
-			fmt.Printf("entries in %s: %d\n", string(r), len(e))
 			mut.Unlock()
 		}(r)
 	}
@@ -36,6 +35,7 @@ func ParseAlphabet(folderPath string) ([]dictionary.Entry, error) {
 	if wgErr != nil {
 		return nil, wgErr
 	}
+
 	return dico, nil
 }
 
@@ -67,12 +67,25 @@ func format(x xmlittre) []dictionary.Entry {
 	for _, e := range x.Entree {
 		for _, v := range e.Corps.Variante {
 			ee := dictionary.Entry{
-				Term:      e.Terme,
-				Header:    e.Entete.Text,
+				Term:   e.Terme,
+				Header: e.Entete.Text,
 				Body: dictionary.EntryBody{
-					Def: v.Num + ". " + v.Text,
+					Def: func() string {
+						if len(v.Num) > 0 {
+							return v.Num + ". " + v.Text
+						} else {
+							return v.Text
+						}
+					}(),
 				},
 			}
+			ee.Body.Quotes = func() []string {
+				quotes := make([]string, 0)
+				for _, q := range v.Cit {
+					quotes = append(quotes, q.Text)
+				}
+				return quotes
+			}()
 			ret = append(ret, ee)
 		}
 	}

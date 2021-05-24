@@ -7,17 +7,37 @@ import (
 
 	"github.com/ablqk/littre-bot/parsers"
 	"github.com/ablqk/littre-bot/src/dictionary"
-	"github.com/fatih/color"
+	colour "github.com/fatih/color"
+)
+
+const (
+	gobFile = "bin/dict.gob"
 )
 
 func main() {
-	fromXML, err := parsers.ParseAlphabet("parsers/xmlittre-data")
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
+	var parsedEntries []dictionary.Entry
+	var err error
 
-	d := dictionary.New(fromXML)
+	if _, err = os.Stat(gobFile); os.IsNotExist(err) {
+		parsedEntries, err = parsers.ParseAlphabet("parsers/xmlittre-data")
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+		// save it, for future reference
+		if err := parsers.SaveGob(parsedEntries, gobFile); err != nil {
+			// this is not blocking
+			fmt.Fprintf(os.Stderr, "unable to save gob: %s", err.Error())
+		}
+	} else {
+		// assume file exists
+		parsedEntries, err = parsers.ParseGob(gobFile)
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+	}
+	d := dictionary.New(parsedEntries)
 	w := d.NewRandomWord()
 
 	out(w, os.Stdout)
@@ -25,21 +45,15 @@ func main() {
 
 func out(w dictionary.Entry, at io.Writer) {
 	pTerm(at, w.Term)
-	pNL(at)
 	pDef(at, w.Body.Def)
-	pNL(at)
 	pDef(at, w.Body.Quotes)
-	pNL(at)
 	pTagLine(at, "Provided by Littré")
 }
 
 var (
-	pNL = func(at io.Writer) {
-		_, _ = fmt.Fprintln(at)
-	}
-	pTerm    = color.New(color.FgBlue).Add(color.Bold).FprintlnFunc()
-	pDef     = color.New(color.FgGreen).FprintlnFunc()
-	pTagLine = color.New(color.FgYellow).FprintlnFunc()
+	pTerm    = colour.New(colour.FgBlue).Add(colour.Bold).FprintlnFunc()
+	pDef     = colour.New(colour.FgGreen).FprintlnFunc()
+	pTagLine = colour.New(colour.FgYellow).FprintlnFunc()
 )
 
 

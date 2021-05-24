@@ -13,3 +13,5 @@ vendor/
 # XML folder
 parsers/xmlittre-data
 
+# IDE files
+.idea/
