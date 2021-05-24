@@ -1,8 +1,11 @@
 parsers/xmlittre-data:
 	git clone https://bitbucket.org/Mytskine/xmlittre-data parsers/xmlittre-data
 
-build:
+binary:
 	go build -o bin/littre.out src/cli/main.go
+
+test:
+	go test -race ./... --cover
 
 rmgob:
 	rm bin/dict.gob

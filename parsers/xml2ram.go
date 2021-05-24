@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
-	"strings"
 	"sync"
 
 	"github.com/ablqk/littre-bot/src/dictionary"
@@ -37,11 +36,6 @@ func ParseAlphabet(folderPath string) ([]dictionary.Entry, error) {
 		return nil, wgErr
 	}
 
-	// save it, for future reference
-	err := saveGob(dico)
-	if err != nil {
-		return nil, fmt.Errorf("unable to save gob: %w", err)
-	}
 	return dico, nil
 }
 
@@ -73,14 +67,16 @@ func format(x xmlittre) []dictionary.Entry {
 	for _, e := range x.Entree {
 		for _, v := range e.Corps.Variante {
 			ee := dictionary.Entry{
-				Term:      e.Terme,
-				Header:    e.Entete.Text,
+				Term:   e.Terme,
+				Header: e.Entete.Text,
 				Body: dictionary.EntryBody{
-					Def: func()string{if len(v.Num) > 0 {
-						return v.Num + ". " + strings.TrimSuffix(v.Text, "\n")
-					} else {
-						return strings.TrimSuffix(v.Text,"\n")
-					}}(),
+					Def: func() string {
+						if len(v.Num) > 0 {
+							return v.Num + ". " + v.Text
+						} else {
+							return v.Text
+						}
+					}(),
 				},
 			}
 			ee.Body.Quotes = func() []string {
