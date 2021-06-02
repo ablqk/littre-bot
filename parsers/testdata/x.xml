@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xmlittre SYSTEM "xmlittre.dtd">
+<!--
+XMLittré, réalisé par François Gannaz <francois.gannaz@free.fr>.
+
+Le contenu de ce document est sous licence "Creative Commons Paternité - Partage des conditions initiales
+à l'identique 3.0", alias CC-BY-SA 3.0.
+Pour obtenir copie de cette licence, consulter http://creativecommons.org/licenses/by-sa/3.0/deed.fr
+ou envoyer un courrier à Creative Commons, 171 2nd Street, Suite 300, San Francisco, California, 94105, USA.
+
+La suppression des éléments de balisage XML permet d'obtenir un texte
+placé dans le domaine public. Voir le script "xml2txt.pl" à ce sujet.
+
+The content of this document is licensed under the CC-BY-SA license
+See http://creativecommons.org/licenses/by-sa/3.0
+-->
+<xmlittre lettre="X">
+    <entree terme="X">
+        <entete>
+            <prononciation>iks', ou, suivant l'épellation moderne, kse</prononciation>
+            <nature>s. m.</nature>
+        </entete>
+        <corps>
+            <variante num="1">Lettre consonne qui est la vingt-troisième de l'alphabet.
+                <indent>Jambes en X, se dit des genoux tournés en dedans et se touchant.
+                </indent>
+            </variante>
+            <variante num="2">X, dans les chiffres romains, vaut 10 ; XI, 11 ; XII, 12 ; XIII, 13 ; XIIII ou XIV, 14,
+                etc. XX ; 20 ; XXX, 30 ; XXXX ou XL, 40, etc. Surmonté d'un trait, dans cette forme X̄ il vaut 10000 ;
+                couché, il se prenait pour 1000.
+            </variante>
+            <variante num="3">Dans le comput ecclésiastique, marque le dimanche.
+            </variante>
+            <variante num="4">Sur les monnaies de France, indique qu'elles ont été frappées à Amiens, selon
+                l'Encyclopédie, à Aix selon le dictionnaire de Trévoux.
+            </variante>
+            <variante num="5">En marge des anciens manuscrits, X est une note critique qui indique une expression
+                inusitée ou une figure trop hardie.
+                <indent>Il sert aussi quelquefois à noter les endroits remarquables.
+                </indent>
+            </variante>
+            <variante num="6">X ou <i>x</i> s'emploie d'ordinaire, en algèbre, pour désigner l'inconnue ou une des
+                inconnues.
+                <indent>Il se dit quelquefois figurément, dans le langage philosophique, d'une chose que l'on cherche.
+                </indent>
+                <indent>
+                    <semantique type="indicateur">Familièrement,</semantique>
+                    les <i>x</i>, l'algèbre, les mathématiques. Fort en <i>x</i>, fort en mathématiques.
+                    <cit aut="VOLT." ref="Ép. 50">Des <i>xx</i> redoublés admirant la puissance, Il croit que Varignon
+                        est seul utile en France
+                    </cit>
+                </indent>
+                <indent>Nom donné familièrement aux élèves de l'école polytechnique.
+                </indent>
+            </variante>
+            <variante num="7">Un x ou un ixe, chez les tapissiers, est un petit tabouret dont les pieds croisés offrent
+                la figure de cette lettre.
+            </variante>
+            <variante num="8">Poinçon d'acier au bout duquel se trouve gravé un x, pour frapper ou imprimer cette
+                lettre.
+            </variante>
+            <variante num="9">X, espèce de phalène.
+            </variante>
+        </corps>
+        <rubrique nom="REMARQUE">
+            <indent>1. <i>X</i> a tantôt la prononciation de <i>ks</i>, comme dans extrême ; tantôt celle de <i>gz</i>,
+                comme dans exercice ; tantôt celle de <i>k</i>, comme dans exception. Au reste la prononciation en est
+                marquée en particulier. à chaque mot de ce dictionnaire
+            </indent>
+            <indent>2. Dans quelques noms de lieux, <i>x</i> se prononce comme <i>s</i> : Auxerre, Bruxelles, dites
+                ô-sê-r', Bru-sè-l'.
+            </indent>
+            <indent>3. En certains mots, il sonne <i>z</i> : deuxième, sixième, etc.
+            </indent>
+            <indent>4. À la fin des mots où il n'est pas muet, il se prononce comme <i>ks</i> : préfix, sphinx, etc.
+            </indent>
+            <indent>5. Dans la plupart des mots <i>x</i> final est muet et ne sert qu'à rendre plus grave le son de la
+                voyelle : paix, choix, généreux.
+            </indent>
+            <indent>6. Cet <i>x</i> final se lie et prend le son de <i>z</i> : Baux à longues années, bô-z à.... Un
+                choix heureux, choi-z heureux ; une paix inattendue, pê-z inattendue.
+            </indent>
+            <indent>7. Dans certains mots, <i>x</i> final sert à marquer le pluriel : choux, oiseaux, etc. Il remplace
+                aussi quelquefois l'<i>s</i> radicale finale, comme dans jaloux. Dumarsais, Œuv. t. IV, p. 101, suppose
+                que cela vient des maîtres d'écriture, qui ont préféré l'<i>x</i> à l'<i>s</i>, l'<i>x</i> offrant à la
+                main la liberté de faire ces figures inutiles qu'ils appellent traits. Cet usage est bien plus ancien
+                que les maîtres d'écriture auxquels Dumarsais fait allusion ; il appartient au moyen âge, dont
+                l'orthographe variable substitua souvent l'<i>x</i> à l'<i>s</i> finale.
+            </indent>
+        </rubrique>
+        <rubrique nom="ÉTYMOLOGIE">
+            <indent>Lat. <i lang="la">x</i> ; grec, ξ, lettre double composée de ϰ et de σ.
+            </indent>
+        </rubrique>
+    </entree>
+
+    <entree terme="XANTHE">
+        <entete>
+            <prononciation>gzan-t'</prononciation>
+            <nature>s. m.</nature>
+        </entete>
+        <corps>
+            <variante num="1">
+                <semantique type="domaine">Terme de zoologie.</semantique>
+                Genre de crustacés.
+            </variante>
+            <variante num="2">
+                <semantique type="domaine">Terme de botanique.</semantique>
+                Genre de plantes qui rendent un suc blanc ou jaune.
+            </variante>
+        </corps>
+        <rubrique nom="ÉTYMOLOGIE">
+            <indent>Ξανθὸς, jaune, répondant au sanscr. <i lang="sa">chandra</i>, brillant, couleur d'or, et au lat. <i
+                    lang="la">candidus</i>.
+            </indent>
+        </rubrique>
+    </entree>
+
+    <entree terme="XANTHOPROTÉIQUE">
+        <entete>
+            <prononciation>gzan-to-pro-té-i-k'</prononciation>
+            <nature>adj.</nature>
+        </entete>
+        <corps>
+            <variante>
+                <semantique type="domaine">Terme de chimie.</semantique>
+                Acide xanthoprotéique, acide jaune, un des produits non cristallisables de la décomposition des
+                substances organiques azotées par l'action de l'acide nitrique.
+            </variante>
+        </corps>
+        <rubrique nom="ÉTYMOLOGIE">
+            <indent>Ξανθὸς, jaune, et <i>protéine</i>.
+            </indent>
+        </rubrique>
+    </entree>
+
+    <entree terme="XYLOFER" supplement="1">
+        <entete>
+            <prononciation>ksi-lo-fèr</prononciation>
+            <nature>s. m.</nature>
+        </entete>
+        <corps>
+            <variante>
+                <semantique type="domaine">Terme de gymnastique.</semantique>
+                Instrument nouveau conseillé par le docteur Tissot en 1870, pour ouvrir et développer la poitrine des
+                enfants, composé par M. Laisné, en 1873.
+                <cit aut="N. LAISNÉ" ref="Notions pratiq. sur les exercices du corps, p. 28">Des xylofers ; le fusil
+                    avec sa bayonnette garnie de son fourreau peut très bien remplacer cet instrument pour les
+                    militaires
+                </cit>
+            </variante>
+        </corps>
+    </entree>
+
+    <entree terme="XYLOGÉNE">
+        <entete>
+            <prononciation>ksi-lo-jê-n'</prononciation>
+            <nature>s. m.</nature>
+        </entete>
+        <corps>
+            <variante>
+                <semantique type="domaine">Terme de chimie.</semantique>
+                Substance lignifiante caractérisée par sa solubilité facile et complète dans la potasse caustique, et,
+                au contraire, par son insolubilité ou très difficile dissolution dans l'acide sulfurique. Le xylogène se
+                trouve dans la paroi primaire des cellules de plantes, et dans les couches d'épaississement de toutes
+                les cellules lignifiées.
+            </variante>
+        </corps>
+        <rubrique nom="ÉTYMOLOGIE">
+            <indent><i>Xylo...</i>, et γεννᾷν, engendrer.
+            </indent>
+        </rubrique>
+    </entree>
+
+
+</xmlittre>
