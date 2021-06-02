@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"io"
-	"os"
 	"strings"
 
 	"github.com/ablqk/littre-bot/parsers"
@@ -16,32 +15,16 @@ const (
 )
 
 func main() {
-	var parsedEntries []dictionary.Entry
-	var err error
-
-	if _, err = os.Stat(gobFile); os.IsNotExist(err) {
-		parsedEntries, err = parsers.ParseAlphabet("parsers/xmlittre-data")
-		if err != nil {
-			fmt.Println(err)
-			return
-		}
-		// save it, for future reference
-		if err := parsers.SaveGob(parsedEntries, gobFile); err != nil {
-			// this is not blocking
-			_, _ = fmt.Fprintf(os.Stderr, "unable to save gob: %s", err.Error())
-		}
-	} else {
-		// assume file exists
-		parsedEntries, err = parsers.ParseGob(gobFile)
-		if err != nil {
-			fmt.Println(err)
-			return
-		}
+	parsedEntries, err := parsers.ParseAlphabet("parsers/xmlittre-data")
+	if err != nil {
+		fmt.Println(err)
+		return
 	}
-	d := dictionary.New(parsedEntries)
-	w := d.NewRandomWord()
 
-	out(w, os.Stdout)
+	// save it, for future reference
+	if err := parsers.SaveGob(parsedEntries, gobFile); err != nil {
+		fmt.Printf("unable to save gob: %s\n", err.Error())
+	}
 }
 
 func out(w dictionary.Entry, at io.Writer) {

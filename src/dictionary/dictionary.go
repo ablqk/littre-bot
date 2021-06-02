@@ -1,7 +1,6 @@
 package dictionary
 
 import (
-	"fmt"
 	"math/rand"
 	"time"
 )
@@ -18,7 +17,6 @@ type Dictionary struct {
 
 func (d *Dictionary) NewRandomWord() Entry {
 	length := len(d.entries)
-	fmt.Println(length)
 	rand.Seed(time.Now().Unix())
 	r := rand.Intn(length)
 	return d.entries[r]

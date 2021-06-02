@@ -15,6 +15,15 @@ func Test_parseLetter(t *testing.T) {
 			file: "testdata/x.xml",
 			want: []dictionary.Entry{
 				{Term: "X"},
+				{Term: "X"},
+				{Term: "X"},
+				{Term: "X"},
+				{Term: "X"},
+				{Term: "X"},
+				{Term: "X"},
+				{Term: "X"},
+				{Term: "X"},
+				{Term: "XANTHE"},
 				{Term: "XANTHE"},
 				{Term: "XANTHOPROTÉIQUE"},
 				{Term: "XYLOFER"},
@@ -29,7 +38,7 @@ func Test_parseLetter(t *testing.T) {
 				t.Errorf("error while parsing %s", err.Error())
 			}
 			if len(got) != len(tt.want) {
-				t.Errorf("different sizes : %v, want %v", len(got), len(tt.want))
+				t.Errorf("different sizes: %v, want %v", len(got), len(tt.want))
 			}
 		})
 	}
